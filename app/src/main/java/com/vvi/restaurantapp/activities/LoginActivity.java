@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import com.vvi.restaurantapp.R;
 import com.vvi.restaurantapp.requests.LoginRequest;
+import com.vvi.restaurantapp.util.HashUtils;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -39,7 +40,7 @@ public class LoginActivity extends AppCompatActivity {
                 Toast.makeText(this, "Введите пароль!", Toast.LENGTH_SHORT).show();
                 return;
             }
-            new LoginRequest(this).execute(login, password);
+            new LoginRequest(this).execute(login, HashUtils.hashString(password));
         });
     }
 }
