@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">RestaurantApp</string>
+    <string name="Login">Вход</string>
+    <string name="LoginHint">Введите логин</string>
+    <string name="PasswordHint">Введите пароль</string>
+    <string name="RegistrationHint">Нет аккаунта? Зарегистрируйтесь</string>
+    <string name="LoginButton">Войти</string>
+    <string name="FIOHint">ФИО</string>
+    <string name="Registration">Регистрация</string>
+    <string name="Register">Зарегистрироваться</string>
+</resources>
