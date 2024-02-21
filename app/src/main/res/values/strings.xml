@@ -8,4 +8,18 @@
     <string name="FIOHint">ФИО</string>
     <string name="Registration">Регистрация</string>
     <string name="Register">Зарегистрироваться</string>
+    <string name="menu">Меню</string>
+    <string name="statistics">Статистика</string>
+    <string name="userlist">Пользователи</string>
+    <string name="startorder">Сделать заказ</string>
+    <string name="leavecomment">Оставить отзыв</string>
+    <string name="statusorder">Статус заказа</string>
+    <string name="editorder">Редактировать заказ</string>
+    <string name="cancelorder">Отменить заказ</string>
+    <string name="select">Выбрать</string>
+    <string name="NameHint">Введите название</string>
+    <string name="DescHint">Введите описание</string>
+    <string name="PriceHint">Введите цену</string>
+    <string name="TimeHint">Введите время приготовления</string>
+    <string name="postorder">Оформить заказ</string>
 </resources>
