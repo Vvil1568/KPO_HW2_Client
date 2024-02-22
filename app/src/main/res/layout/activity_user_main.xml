@@ -7,62 +7,62 @@
     tools:context=".activities.UserMainActivity">
 
     <Button
-        android:id="@+id/statistics4"
+        android:id="@+id/orderStatus"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statistics3"
-        tools:text="@string/statusorder" />
+        app:layout_constraintTop_toBottomOf="@+id/cancelOrder"
+        android:text="@string/statusorder" />
 
     <Button
-        android:id="@+id/statistics5"
+        android:id="@+id/leaveComment"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statistics4"
-        tools:text="@string/leavecomment" />
+        app:layout_constraintTop_toBottomOf="@+id/orderStatus"
+        android:text="@string/leavecomment" />
 
     <Button
-        android:id="@+id/statistics3"
+        android:id="@+id/cancelOrder"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statistics"
-        tools:text="@string/cancelorder" />
+        app:layout_constraintTop_toBottomOf="@+id/editOrder"
+        android:text="@string/cancelorder" />
 
     <TextView
         android:id="@+id/textView"
         style="@style/Title"
         android:layout_marginBottom="40dp"
-        android:text="Добро пожаловать!"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:text="@string/welcome"
+        app:layout_constraintBottom_toTopOf="@+id/placeOrder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/placeOrder"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="@string/startorder"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/statistics"
+        app:layout_constraintBottom_toTopOf="@+id/editOrder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/statistics"
+        android:id="@+id/editOrder"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="@string/editorder" />
+        android:text="@string/editorder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

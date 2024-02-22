@@ -22,4 +22,5 @@
     <string name="PriceHint">Введите цену</string>
     <string name="TimeHint">Введите время приготовления</string>
     <string name="postorder">Оформить заказ</string>
+    <string name="welcome">Добро пожаловать!</string>
 </resources>

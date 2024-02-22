@@ -4,29 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.MainActivity">
+    tools:context=".activities.AdminMainActivity">
 
     <Button
-        android:id="@+id/statistics2"
+        android:id="@+id/adminUserList"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/statistics"
-        tools:text="@string/userlist" />
+        app:layout_constraintTop_toBottomOf="@+id/adminStatistics"
+        android:text="@string/userlist" />
 
     <TextView
         android:id="@+id/textView"
         style="@style/Title"
         android:layout_marginBottom="40dp"
-        android:text="Добро пожаловать!"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        android:text="@string/welcome"
+        app:layout_constraintBottom_toTopOf="@+id/adminMenu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/adminMenu"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="@string/menu"
@@ -36,13 +36,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/statistics"
+        android:id="@+id/adminStatistics"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button"
-        tools:text="@string/statistics" />
+        app:layout_constraintTop_toBottomOf="@+id/adminMenu"
+        android:text="@string/statistics" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
