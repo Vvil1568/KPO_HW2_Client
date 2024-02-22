@@ -8,7 +8,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.vvi.restaurantapp.R;
-import com.vvi.restaurantapp.requests.LoginRequest;
+import com.vvi.restaurantapp.requests.authentification.LoginRequest;
 import com.vvi.restaurantapp.util.HashUtils;
 
 public class LoginActivity extends AppCompatActivity {

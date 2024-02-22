@@ -2,14 +2,12 @@ package com.vvi.restaurantapp.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import com.vvi.restaurantapp.R;
-import com.vvi.restaurantapp.requests.LoginRequest;
-import com.vvi.restaurantapp.requests.RegisterRequest;
+import com.vvi.restaurantapp.requests.authentification.RegisterRequest;
 import com.vvi.restaurantapp.util.HashUtils;
 
 public class RegistrationActivity extends AppCompatActivity {
