@@ -3,6 +3,8 @@ package com.vvi.restaurantapp.requests;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.vvi.restaurantapp.util.SessionStorage;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -13,6 +15,7 @@ import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
+import java.util.Objects;
 
 public abstract class BasicRequest extends AsyncTask<String, Void, String> {
     private final String method;
@@ -36,12 +39,17 @@ public abstract class BasicRequest extends AsyncTask<String, Void, String> {
         try {
             URL url = new URL(address);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-            conn.setDoOutput(true);
             conn.setRequestMethod(method);
-            conn.setRequestProperty("Content-Type", "application/json");
-            OutputStream os = conn.getOutputStream();
-            byte[] input = toSend.getBytes(StandardCharsets.UTF_8);
-            os.write(input, 0, input.length);
+            if(!Objects.equals(SessionStorage.token, "")){
+                conn.setRequestProperty("Authorization", "Bearer " + SessionStorage.token);
+            }
+            if(!method.equals("GET")) {
+                conn.setDoOutput(true);
+                conn.setRequestProperty("Content-Type", "application/json");
+                OutputStream os = conn.getOutputStream();
+                byte[] input = toSend.getBytes(StandardCharsets.UTF_8);
+                os.write(input, 0, input.length);
+            }
             return conn;
         } catch (Exception e) {
             Log.e("RestaurantApp", "Can't send post request to url " + address, e);
