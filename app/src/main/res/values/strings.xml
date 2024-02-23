@@ -23,4 +23,6 @@
     <string name="TimeHint">Введите время приготовления</string>
     <string name="postorder">Оформить заказ</string>
     <string name="welcome">Добро пожаловать!</string>
+    <string name="toShoppingCart">Перейти в корзину</string>
+    <string name="writeComment">Введите текст отзыва</string>
 </resources>
