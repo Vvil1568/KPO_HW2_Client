@@ -4,26 +4,26 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.vvi.restaurantapp.R;
-import com.vvi.restaurantapp.adapters.MenuArrayAdapter;
-import com.vvi.restaurantapp.items.Dish;
+import com.vvi.restaurantapp.adapters.DishArrayAdapter;
 import com.vvi.restaurantapp.requests.dish.AddDishRequest;
 import com.vvi.restaurantapp.requests.dish.GetDishListRequest;
 import com.vvi.restaurantapp.util.SessionStorage;
 
 public class MenuActivity extends AppCompatActivity {
     private ImageView buttonAdd;
-    private ImageView buttonBuy;
+    private Button buttonBuy;
     private ListView listView;
-    private MenuArrayAdapter listAdapter;
+    private DishArrayAdapter listAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,11 +41,12 @@ public class MenuActivity extends AppCompatActivity {
         }else{
             buttonAdd.setVisibility(ImageView.GONE);
             buttonBuy.setOnClickListener(v -> {
-
+                Intent intent = new Intent(MenuActivity.this, ShoppingCartActivity.class);
+                startActivity(intent);
             });
         }
 
-        listAdapter = new MenuArrayAdapter(this, R.layout.menu_list_item);
+        listAdapter = new DishArrayAdapter(this, R.layout.menu_list_item);
         listView.setAdapter(listAdapter);
         new GetDishListRequest(this).execute();
     }
@@ -73,7 +74,7 @@ public class MenuActivity extends AppCompatActivity {
         return dialog.create();
     }
 
-    public MenuArrayAdapter getListAdapter() {
+    public DishArrayAdapter getListAdapter() {
         return listAdapter;
     }
 }

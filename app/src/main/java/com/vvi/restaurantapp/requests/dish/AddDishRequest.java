@@ -29,7 +29,7 @@ public class AddDishRequest extends BasicRequest {
     protected void onPostExecute(String s) {
         JSONObject response = readAsJson(s);
         if (response != null) {
-            Dish dish = SerializationUtils.deserialize(response);
+            Dish dish = SerializationUtils.deserializeDish(response);
             if (dish == null) {
                 Toast.makeText(responseActivity.get(), "Невозможно считать ответ на запрос о добавлении", Toast.LENGTH_SHORT).show();
             }

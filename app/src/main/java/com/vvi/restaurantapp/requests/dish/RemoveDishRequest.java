@@ -3,7 +3,7 @@ package com.vvi.restaurantapp.requests.dish;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.vvi.restaurantapp.adapters.MenuArrayAdapter;
+import com.vvi.restaurantapp.adapters.DishArrayAdapter;
 import com.vvi.restaurantapp.requests.BasicRequest;
 
 import org.json.JSONObject;
@@ -13,11 +13,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RemoveDishRequest extends BasicRequest {
-    private final WeakReference<MenuArrayAdapter> responseAdapter;
+    private final WeakReference<DishArrayAdapter> responseAdapter;
     private final WeakReference<Context> responseContext;
     private final int adapterId;
 
-    public RemoveDishRequest(Context context, MenuArrayAdapter activity, int adapterId) {
+    public RemoveDishRequest(Context context, DishArrayAdapter activity, int adapterId) {
         super("/dish/remove","POST");
         this.responseAdapter = new WeakReference<>(activity);
         this.responseContext = new WeakReference<>(context);

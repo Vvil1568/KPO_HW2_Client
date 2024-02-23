@@ -18,29 +18,22 @@ public class GetDishListRequest extends BasicRequest {
     private final WeakReference<MenuActivity> responseActivity;
 
     public GetDishListRequest(MenuActivity activity) {
-        super("/dish/get","GET");
+        super("/dish/get", "GET");
         this.responseActivity = new WeakReference<>(activity);
     }
 
     @Override
     protected void onPostExecute(String s) {
         JSONObject response = readAsJson(s);
-        if(response!=null){
-            try {
-                ArrayList<Dish> dishes = new ArrayList<>();
-                JSONArray dishesObj = response.getJSONArray("dishes");
-                for(int i=0;i<dishesObj.length();i++){
-                    Dish dish = SerializationUtils.deserialize(dishesObj.getJSONObject(i));
-                    if(dish!=null) {
-                        dishes.add(dish);
-                    }
-                }
-                responseActivity.get().getListAdapter().addAll(dishes);
-            }catch (JSONException e){
+        if (response != null) {
+            ArrayList<Dish> dishes = SerializationUtils.deserializeDishList(response);
+            if (dishes == null) {
                 Toast.makeText(responseActivity.get(), "Невозможно считать ответ на запрос о получении списка блюд", Toast.LENGTH_SHORT).show();
+            } else {
+                responseActivity.get().getListAdapter().addAll(dishes);
             }
-        }else{
-            Toast.makeText(responseActivity.get(), "Произошла ошибка при получении списка блюд!\n"+s, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(responseActivity.get(), "Произошла ошибка при получении списка блюд!\n" + s, Toast.LENGTH_SHORT).show();
         }
     }
 
