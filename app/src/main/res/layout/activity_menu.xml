@@ -19,17 +19,15 @@
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@android:drawable/ic_input_add" />
 
-    <ImageView
+    <Button
         android:id="@+id/menuBuy"
-        android:layout_width="40dp"
+        android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_marginEnd="20dp"
-        android:foregroundTint="#FF0505"
-        android:tint="#D61616"
+        android:text="@string/toShoppingCart"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/menuList"
-        app:srcCompat="@drawable/shopping_cart" />
+        app:layout_constraintTop_toBottomOf="@+id/menuList" />
 
     <ListView
         android:id="@+id/menuList"

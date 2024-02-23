@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.vvi.restaurantapp.R;
+import com.vvi.restaurantapp.requests.order.GetOrderStatusRequest;
 
 public class UserMainActivity extends AppCompatActivity {
 
@@ -16,6 +17,15 @@ public class UserMainActivity extends AppCompatActivity {
 
         findViewById(R.id.placeOrder).setOnClickListener(v -> {
             Intent intent = new Intent(UserMainActivity.this, MenuActivity.class);
+            startActivity(intent);
+        });
+
+        findViewById(R.id.orderStatus).setOnClickListener(v -> {
+            new GetOrderStatusRequest(this).execute();
+        });
+
+        findViewById(R.id.leaveComment).setOnClickListener(v->{
+            Intent intent = new Intent(UserMainActivity.this, CommentDishListActivity.class);
             startActivity(intent);
         });
     }
