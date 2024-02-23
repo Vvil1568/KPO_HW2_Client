@@ -20,7 +20,8 @@ public class AdminMainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.adminUserList).setOnClickListener(v -> {
-
+            Intent intent = new Intent(AdminMainActivity.this, UserListActivity.class);
+            startActivity(intent);
         });
 
         findViewById(R.id.adminStatistics).setOnClickListener(v -> {
