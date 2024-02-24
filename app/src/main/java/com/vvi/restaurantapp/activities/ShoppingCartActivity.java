@@ -6,11 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import com.vvi.restaurantapp.R;
 import com.vvi.restaurantapp.adapters.ShoppingCartAdapter;
 import com.vvi.restaurantapp.requests.order.GetOrderDishListRequest;
+import com.vvi.restaurantapp.requests.order.PublishOrderRequest;
 
 public class ShoppingCartActivity extends AppCompatActivity {
     private ListView listView;
@@ -31,9 +31,7 @@ public class ShoppingCartActivity extends AppCompatActivity {
         postOrder.setOnClickListener(v -> {
             Intent intent = new Intent(ShoppingCartActivity.this, UserMainActivity.class);
             startActivity(intent);
-            Toast toast = Toast.makeText(this, "Заказ успешно оформлен!", Toast.LENGTH_SHORT);
-            toast.setMargin(0,50);
-            toast.show();
+            new PublishOrderRequest(this).execute();
         });
     }
 
