@@ -11,10 +11,10 @@
     <string name="menu">Меню</string>
     <string name="statistics">Статистика</string>
     <string name="userlist">Пользователи</string>
-    <string name="startorder">Сделать заказ</string>
+    <string name="startorder">Сделать/редактировать заказ</string>
     <string name="leavecomment">Оставить отзыв</string>
     <string name="statusorder">Статус заказа</string>
-    <string name="editorder">Редактировать заказ</string>
+    <string name="payfororder">Оплатить заказ</string>
     <string name="cancelorder">Отменить заказ</string>
     <string name="select">Выбрать</string>
     <string name="NameHint">Введите название</string>
@@ -25,4 +25,8 @@
     <string name="welcome">Добро пожаловать!</string>
     <string name="toShoppingCart">Перейти в корзину</string>
     <string name="writeComment">Введите текст отзыва</string>
+    <string name="periodbegin">"Период с "</string>
+    <string name="Statistics">Статистика</string>
+    <string name="datePlaceholder">--.--.----</string>
+    <string name="getComments">Просмотр отзывов</string>
 </resources>

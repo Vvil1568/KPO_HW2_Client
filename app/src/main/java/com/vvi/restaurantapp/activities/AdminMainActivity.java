@@ -25,7 +25,8 @@ public class AdminMainActivity extends AppCompatActivity {
         });
 
         findViewById(R.id.adminStatistics).setOnClickListener(v -> {
-
+            Intent intent = new Intent(AdminMainActivity.this, AdminStatisticsActivity.class);
+            startActivity(intent);
         });
     }
 }
