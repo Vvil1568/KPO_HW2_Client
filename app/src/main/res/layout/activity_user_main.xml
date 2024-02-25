@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/orderStatus"
-        android:layout_width="250dp"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -18,7 +18,7 @@
 
     <Button
         android:id="@+id/leaveComment"
-        android:layout_width="250dp"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -28,12 +28,12 @@
 
     <Button
         android:id="@+id/cancelOrder"
-        android:layout_width="250dp"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editOrder"
+        app:layout_constraintTop_toBottomOf="@+id/payForOrder"
         android:text="@string/cancelorder" />
 
     <TextView
@@ -47,22 +47,22 @@
 
     <Button
         android:id="@+id/placeOrder"
-        android:layout_width="250dp"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         android:text="@string/startorder"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@+id/editOrder"
+        app:layout_constraintBottom_toTopOf="@+id/payForOrder"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/editOrder"
-        android:layout_width="250dp"
+        android:id="@+id/payForOrder"
+        android:layout_width="310dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:text="@string/editorder" />
+        android:text="@string/payfororder" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

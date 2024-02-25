@@ -11,24 +11,25 @@ import java.lang.ref.WeakReference;
 import java.util.HashMap;
 import java.util.Map;
 
-public class PublishOrderRequest extends BasicRequest {
+public class CancelOrderRequest extends BasicRequest {
     private final WeakReference<Context> responseContext;
 
-    public PublishOrderRequest(Context context) {
-        super("/order/postorder","POST");
+    public CancelOrderRequest(Context context) {
+        super("/order/cancelorder","POST");
         this.responseContext = new WeakReference<>(context);
     }
 
     @Override
     protected void onPostExecute(String s) {
         JSONObject response = readAsJson(s);
+        Toast toast;
         if(response==null){
-            Toast.makeText(responseContext.get(), "Произошла ошибка при оформлении заказа!\n"+s, Toast.LENGTH_SHORT).show();
+            toast = Toast.makeText(responseContext.get(), "Произошла ошибка при отмене заказа!\n" + s, Toast.LENGTH_SHORT);
         }else{
-            Toast toast = Toast.makeText(responseContext.get(), "Заказ успешно оформлен!", Toast.LENGTH_SHORT);
-            toast.setMargin(0,1);
-            toast.show();
+            toast = Toast.makeText(responseContext.get(), "Заказ успешно отменен!", Toast.LENGTH_SHORT);
         }
+        toast.setMargin(0,1);
+        toast.show();
     }
 
     @Override

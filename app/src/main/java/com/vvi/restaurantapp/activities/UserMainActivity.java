@@ -6,7 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import com.vvi.restaurantapp.R;
+import com.vvi.restaurantapp.requests.order.CancelOrderRequest;
 import com.vvi.restaurantapp.requests.order.GetOrderStatusRequest;
+import com.vvi.restaurantapp.requests.order.PayForOrderRequest;
 
 public class UserMainActivity extends AppCompatActivity {
 
@@ -22,6 +24,14 @@ public class UserMainActivity extends AppCompatActivity {
 
         findViewById(R.id.orderStatus).setOnClickListener(v -> {
             new GetOrderStatusRequest(this).execute();
+        });
+
+        findViewById(R.id.payForOrder).setOnClickListener(v -> {
+            new PayForOrderRequest(this).execute();
+        });
+
+        findViewById(R.id.cancelOrder).setOnClickListener(v -> {
+            new CancelOrderRequest(this).execute();
         });
 
         findViewById(R.id.leaveComment).setOnClickListener(v->{
