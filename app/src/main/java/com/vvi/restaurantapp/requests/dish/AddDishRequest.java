@@ -46,6 +46,7 @@ public class AddDishRequest extends BasicRequest {
         paramMap.put("desc", params[1]);
         paramMap.put("price", Double.parseDouble(params[2]));
         paramMap.put("time", Long.parseLong(params[3]));
+        paramMap.put("image", params[4]);
         return new JSONObject(paramMap);
     }
 }

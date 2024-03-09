@@ -1,6 +1,9 @@
 package com.vvi.restaurantapp.adapters;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Base64;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +16,7 @@ import androidx.annotation.Nullable;
 
 import com.vvi.restaurantapp.R;
 import com.vvi.restaurantapp.activities.CommentDishListActivity;
+import com.vvi.restaurantapp.activities.MenuActivity;
 import com.vvi.restaurantapp.items.Dish;
 import com.vvi.restaurantapp.requests.dish.RemoveDishRequest;
 import com.vvi.restaurantapp.requests.order.BuyDishRequest;
@@ -54,20 +58,29 @@ public class DishArrayAdapter extends ArrayAdapter<Dish> {
         name.setText(dish.getName());
         desc.setText(dish.getDescription());
 
-        if(itemResourceType == R.layout.menu_list_item) {
+        if(getContext() instanceof MenuActivity) {
             TextView price = view.findViewById(R.id.menuItemPrice);
             ImageView buyButton = view.findViewById(R.id.menuItemBuy);
             ImageView deleteButton = view.findViewById(R.id.menuItemDelete);
+            ImageView editButton = view.findViewById(R.id.editDish);
+            ImageView dishPhoto = view.findViewById(R.id.dishPhoto);
 
             price.setText("" + dish.getPrice());
+            byte[] decodedString = Base64.decode(dish.getImage(), Base64.DEFAULT);
+            Bitmap decodedBitmap = BitmapFactory.decodeByteArray(decodedString, 0, decodedString.length);
+            dishPhoto.setImageBitmap(decodedBitmap);
 
             if (SessionStorage.isAdmin) {
                 buyButton.setVisibility(View.GONE);
                 deleteButton.setOnClickListener(v -> {
                     new RemoveDishRequest(getContext(), this, position).execute("" + dish.getId());
                 });
+                editButton.setOnClickListener(v -> {
+                    ((MenuActivity)getContext()).getEditDialog(position,dish).create().show();
+                });
             } else {
                 deleteButton.setVisibility(View.GONE);
+                editButton.setVisibility(View.GONE);
                 buyButton.setOnClickListener(v -> {
                     new BuyDishRequest(getContext()).execute("" + dish.getId());
                 });

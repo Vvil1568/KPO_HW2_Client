@@ -19,7 +19,8 @@ public class SerializationUtils {
             String desc = object.getString("desc");
             double price = object.getDouble("price");
             long time = object.getLong("time");
-            return new Dish(id, name, desc, price, time);
+            String image = object.getString("image");
+            return new Dish(id, name, desc, price, time, image);
         }catch (JSONException e){
             return null;
         }

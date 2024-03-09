@@ -29,4 +29,5 @@
     <string name="Statistics">Статистика</string>
     <string name="datePlaceholder">--.--.----</string>
     <string name="getComments">Просмотр отзывов</string>
+    <string name="addPhotoLabel">Добавить фотографию блюда</string>
 </resources>
