@@ -45,7 +45,7 @@ public abstract class BasicRequest extends AsyncTask<String, Void, String> {
             }
             if(!method.equals("GET")) {
                 conn.setDoOutput(true);
-                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
                 OutputStream os = conn.getOutputStream();
                 byte[] input = toSend.getBytes(StandardCharsets.UTF_8);
                 os.write(input, 0, input.length);
@@ -66,7 +66,7 @@ public abstract class BasicRequest extends AsyncTask<String, Void, String> {
             }else{
                 istream = conn.getErrorStream();
             }
-            BufferedReader reader = new BufferedReader(new InputStreamReader(istream));
+            BufferedReader reader = new BufferedReader(new InputStreamReader(istream, StandardCharsets.UTF_8));
             StringBuilder response = new StringBuilder();
             String line;
             while ((line = reader.readLine()) != null) {
