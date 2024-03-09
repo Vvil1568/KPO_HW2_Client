@@ -46,5 +46,5 @@
         android:text="@string/postorder"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/_dynamic" />
+        app:layout_constraintTop_toBottomOf="@+id/cartList" />
 </androidx.constraintlayout.widget.ConstraintLayout>
