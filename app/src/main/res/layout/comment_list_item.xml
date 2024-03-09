@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:backgroundTint="#FFC400"
+    android:foregroundTint="#FFC400">
 
     <TextView
         android:id="@+id/commentDishName"
@@ -22,6 +24,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
+        android:numStars="5"
+        android:stepSize="1.0"
+        android:progressDrawable="@drawable/gold_star"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/commentDishName" />
 

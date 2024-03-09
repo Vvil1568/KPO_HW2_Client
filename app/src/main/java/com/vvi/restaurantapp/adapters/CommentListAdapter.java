@@ -39,6 +39,7 @@ public class CommentListAdapter extends ArrayAdapter<Comment> {
 
         name.setText(comment.getName());
         bar.setNumStars(comment.getStars());
+        bar.setIsIndicator(true);
         commentText.setText(comment.getComment());
         return view;
     }
