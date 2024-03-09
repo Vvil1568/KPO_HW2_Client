@@ -30,10 +30,10 @@ public class GetFavouriteDishRequest extends BasicRequest {
                 toast.setMargin(0,1);
                 toast.show();
             } catch (JSONException e) {
-                Toast.makeText(responseActivity.get(), "Произошла ошибка при получении самого популярного блюда!\n"+s, Toast.LENGTH_SHORT).show();
+                Toast.makeText(responseActivity.get(), "Невозможно определить самое популярное блюдо!", Toast.LENGTH_SHORT).show();
             }
         }else{
-            Toast.makeText(responseActivity.get(), "Произошла ошибка при получении самого популярного блюда!\n"+s, Toast.LENGTH_SHORT).show();
+            Toast.makeText(responseActivity.get(), "Невозможно определить самое популярное блюдо!", Toast.LENGTH_SHORT).show();
         }
     }
 
