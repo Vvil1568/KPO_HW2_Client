@@ -39,7 +39,7 @@ public class RatingListAdapter extends ArrayAdapter<AbstractMap.SimpleEntry<Stri
         TextView rate = view.findViewById(R.id.ratingItemRate);
 
         name.setText(rating.getKey());
-        rate.setText(rating.getValue().toString());
+        rate.setText(String.format("%.2f",rating.getValue()));
         return view;
     }
 
