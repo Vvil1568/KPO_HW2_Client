@@ -15,7 +15,7 @@ public class HashUtils {
             for (byte b : hash) hexString.append(Integer.toHexString(0xFF & b));
             return hexString.toString();
         } catch (NoSuchAlgorithmException e) {
-            Log.e("RestaurantApp","An error occurred while hashing the string",e);
+            Log.e("RestaurantApp", "An error occurred while hashing the string", e);
             return null;
         }
     }

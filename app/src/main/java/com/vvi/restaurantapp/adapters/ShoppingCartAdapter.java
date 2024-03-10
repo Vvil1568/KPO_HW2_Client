@@ -68,10 +68,10 @@ public class ShoppingCartAdapter extends ArrayAdapter<SimpleEntry<Dish, Integer>
     public void notifyDataSetChanged() {
         super.notifyDataSetChanged();
         double total = 0;
-        for(int i=0;i<getCount();i++){
+        for (int i = 0; i < getCount(); i++) {
             SimpleEntry<Dish, Integer> item = getItem(i);
-            total+= item.getKey().getPrice()*item.getValue();
+            total += item.getKey().getPrice() * item.getValue();
         }
-        ((TextView)activity.findViewById(R.id.cartPrice)).setText(""+total);
+        ((TextView) activity.findViewById(R.id.cartPrice)).setText("" + total);
     }
 }

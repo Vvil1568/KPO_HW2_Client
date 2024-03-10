@@ -7,8 +7,6 @@ import com.vvi.restaurantapp.items.Dish;
 import com.vvi.restaurantapp.requests.BasicRequest;
 import com.vvi.restaurantapp.util.SerializationUtils;
 
-import org.json.JSONArray;
-import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.lang.ref.WeakReference;

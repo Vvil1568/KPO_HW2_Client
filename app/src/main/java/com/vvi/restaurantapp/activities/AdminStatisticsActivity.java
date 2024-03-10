@@ -1,8 +1,5 @@
 package com.vvi.restaurantapp.activities;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
@@ -12,8 +9,9 @@ import android.view.View;
 import android.widget.CalendarView;
 import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.vvi.restaurantapp.R;
-import com.vvi.restaurantapp.adapters.CommentListAdapter;
 import com.vvi.restaurantapp.requests.statistics.GetFavouriteDishRequest;
 import com.vvi.restaurantapp.requests.statistics.GetOrderCountRequest;
 import com.vvi.restaurantapp.requests.statistics.GetTotalRevenueRequest;
@@ -35,42 +33,42 @@ public class AdminStatisticsActivity extends AppCompatActivity {
         dateFrom = 0;
         dateTo = System.currentTimeMillis();
 
-        findViewById(R.id.statsDateFrom).setOnClickListener(v->{
-            getSelectDate((time)->{
+        findViewById(R.id.statsDateFrom).setOnClickListener(v -> {
+            getSelectDate((time) -> {
                 dateFrom = time;
                 Date date = new Date(dateFrom);
-                ((TextView)findViewById(R.id.statsDateFrom)).setText(dateFormat.format(date));
+                ((TextView) findViewById(R.id.statsDateFrom)).setText(dateFormat.format(date));
             }).show();
         });
 
-        findViewById(R.id.statsDateTo).setOnClickListener(v->{
-            getSelectDate((time)->{
+        findViewById(R.id.statsDateTo).setOnClickListener(v -> {
+            getSelectDate((time) -> {
                 dateTo = time;
                 Date date = new Date(dateTo);
-                ((TextView)findViewById(R.id.statsDateTo)).setText(dateFormat.format(date));
+                ((TextView) findViewById(R.id.statsDateTo)).setText(dateFormat.format(date));
             }).show();
         });
 
-        findViewById(R.id.getTotalRevenue).setOnClickListener(v->{
-            new GetTotalRevenueRequest(this).execute(""+dateFrom, ""+dateTo);
+        findViewById(R.id.getTotalRevenue).setOnClickListener(v -> {
+            new GetTotalRevenueRequest(this).execute("" + dateFrom, "" + dateTo);
         });
 
-        findViewById(R.id.getOrderCount).setOnClickListener(v->{
-            new GetOrderCountRequest(this).execute(""+dateFrom, ""+dateTo);
+        findViewById(R.id.getOrderCount).setOnClickListener(v -> {
+            new GetOrderCountRequest(this).execute("" + dateFrom, "" + dateTo);
         });
 
-        findViewById(R.id.getFavouriteDish).setOnClickListener(v->{
-            new GetFavouriteDishRequest(this).execute(""+dateFrom, ""+dateTo);
+        findViewById(R.id.getFavouriteDish).setOnClickListener(v -> {
+            new GetFavouriteDishRequest(this).execute("" + dateFrom, "" + dateTo);
         });
 
-        findViewById(R.id.showCommentList).setOnClickListener(v->{
+        findViewById(R.id.showCommentList).setOnClickListener(v -> {
             Intent intent = new Intent(AdminStatisticsActivity.this, CommentListActivity.class);
             intent.putExtra("dateFrom", dateFrom);
             intent.putExtra("dateTo", dateTo);
             startActivity(intent);
         });
 
-        findViewById(R.id.showRatingsList).setOnClickListener(v->{
+        findViewById(R.id.showRatingsList).setOnClickListener(v -> {
             Intent intent = new Intent(AdminStatisticsActivity.this, RatingListActivity.class);
             intent.putExtra("dateFrom", dateFrom);
             intent.putExtra("dateTo", dateTo);
@@ -78,7 +76,7 @@ public class AdminStatisticsActivity extends AppCompatActivity {
         });
     }
 
-    public AlertDialog getSelectDate(Consumer<Long> action){
+    public AlertDialog getSelectDate(Consumer<Long> action) {
         AlertDialog.Builder dialog = new AlertDialog.Builder(AdminStatisticsActivity.this);
         dialog.setMessage("Выберите дату");
         dialog.setTitle("Выбор даты");
@@ -87,9 +85,9 @@ public class AdminStatisticsActivity extends AppCompatActivity {
         dialog.setView(dialogview);
         CalendarView calendar = dialogview.findViewById(R.id.calendarView);
         calendar.setOnDateChangeListener((view, year, month, dayOfMonth) -> {
-            action.accept(new Date(year-1900, month, dayOfMonth).getTime());
+            action.accept(new Date(year - 1900, month, dayOfMonth).getTime());
         });
-        dialog.setPositiveButton("Закрыть",(dialog1, i)-> dialog1.dismiss());
+        dialog.setPositiveButton("Закрыть", (dialog1, i) -> dialog1.dismiss());
         return dialog.create();
     }
 }

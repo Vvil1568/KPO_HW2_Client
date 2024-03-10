@@ -12,8 +12,8 @@ import java.lang.ref.WeakReference;
 public class PayForOrderRequest extends BasicRequest {
     private final WeakReference<Context> responseContext;
 
-    public PayForOrderRequest (Context context) {
-        super("/order/payfororder","POST");
+    public PayForOrderRequest(Context context) {
+        super("/order/payfororder", "POST");
         this.responseContext = new WeakReference<>(context);
     }
 
@@ -21,12 +21,12 @@ public class PayForOrderRequest extends BasicRequest {
     protected void onPostExecute(String s) {
         JSONObject response = readAsJson(s);
         Toast toast;
-        if(response==null){
+        if (response == null) {
             toast = Toast.makeText(responseContext.get(), "Произошла ошибка при оплате заказа!\n" + s, Toast.LENGTH_SHORT);
-        }else{
+        } else {
             toast = Toast.makeText(responseContext.get(), "Заказ успешно оплачен!", Toast.LENGTH_SHORT);
         }
-        toast.setMargin(0,1);
+        toast.setMargin(0, 1);
         toast.show();
     }
 

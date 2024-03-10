@@ -16,7 +16,7 @@ import com.vvi.restaurantapp.items.User;
 import com.vvi.restaurantapp.requests.user.ChangeModeRequest;
 
 public class UserListAdapter extends ArrayAdapter<User> {
-    private int itemResourceType;
+    private final int itemResourceType;
 
     public UserListAdapter(@NonNull Context context, int resource) {
         super(context, resource);

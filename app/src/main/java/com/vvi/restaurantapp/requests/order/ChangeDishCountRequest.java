@@ -19,7 +19,7 @@ public class ChangeDishCountRequest extends BasicRequest {
     private final int adapterId;
 
     public ChangeDishCountRequest(ShoppingCartActivity context, ShoppingCartAdapter activity, int adapterId) {
-        super("/order/changedishcount","POST");
+        super("/order/changedishcount", "POST");
         this.responseAdapter = new WeakReference<>(activity);
         this.responseActivity = new WeakReference<>(context);
         this.adapterId = adapterId;
@@ -28,20 +28,20 @@ public class ChangeDishCountRequest extends BasicRequest {
     @Override
     protected void onPostExecute(String s) {
         JSONObject response = readAsJson(s);
-        if(response!=null){
+        if (response != null) {
             try {
                 int newCount = response.getInt("new_count");
-                if(newCount>0) {
+                if (newCount > 0) {
                     responseAdapter.get().getItem(adapterId).setValue(newCount);
                     responseAdapter.get().notifyDataSetChanged();
-                }else{
+                } else {
                     responseAdapter.get().removeId(adapterId);
                 }
             } catch (JSONException e) {
-                Toast.makeText(responseActivity.get(), "Произошла ошибка при изменении количества блюда!\n"+s, Toast.LENGTH_SHORT).show();
+                Toast.makeText(responseActivity.get(), "Произошла ошибка при изменении количества блюда!\n" + s, Toast.LENGTH_SHORT).show();
             }
-        }else{
-            Toast.makeText(responseActivity.get(), "Произошла ошибка при изменении количества блюда!\n"+s, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(responseActivity.get(), "Произошла ошибка при изменении количества блюда!\n" + s, Toast.LENGTH_SHORT).show();
         }
     }
 

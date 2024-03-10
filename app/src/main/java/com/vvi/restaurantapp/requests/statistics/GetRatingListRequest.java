@@ -2,9 +2,7 @@ package com.vvi.restaurantapp.requests.statistics;
 
 import android.widget.Toast;
 
-import com.vvi.restaurantapp.activities.CommentListActivity;
 import com.vvi.restaurantapp.activities.RatingListActivity;
-import com.vvi.restaurantapp.items.Comment;
 import com.vvi.restaurantapp.requests.BasicRequest;
 import com.vvi.restaurantapp.util.SerializationUtils;
 

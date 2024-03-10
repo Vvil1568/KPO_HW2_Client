@@ -29,11 +29,11 @@ public class RegistrationActivity extends AppCompatActivity {
             String fio = fioEditText.getText().toString();
             String login = loginEditText.getText().toString();
             String password = passwordEditText.getText().toString();
-            if(login.isEmpty()){
+            if (login.isEmpty()) {
                 Toast.makeText(this, "Введите логин!", Toast.LENGTH_SHORT).show();
                 return;
             }
-            if(password.isEmpty()){
+            if (password.isEmpty()) {
                 Toast.makeText(this, "Введите пароль!", Toast.LENGTH_SHORT).show();
                 return;
             }

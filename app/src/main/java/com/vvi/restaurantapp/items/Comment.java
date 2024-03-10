@@ -5,7 +5,7 @@ public class Comment {
     private int stars;
     private String name;
 
-    public Comment(String name, int stars, String comment){
+    public Comment(String name, int stars, String comment) {
         this.name = name;
         this.stars = stars;
         this.comment = comment;

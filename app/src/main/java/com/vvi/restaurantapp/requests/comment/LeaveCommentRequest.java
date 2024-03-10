@@ -3,10 +3,7 @@ package com.vvi.restaurantapp.requests.comment;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.vvi.restaurantapp.activities.MenuActivity;
-import com.vvi.restaurantapp.items.Dish;
 import com.vvi.restaurantapp.requests.BasicRequest;
-import com.vvi.restaurantapp.util.SerializationUtils;
 
 import org.json.JSONObject;
 

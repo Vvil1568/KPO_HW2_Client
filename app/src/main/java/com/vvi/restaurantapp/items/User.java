@@ -23,7 +23,7 @@ public class User {
         return isAdmin;
     }
 
-    public void changeMode(){
+    public void changeMode() {
         isAdmin = !isAdmin;
     }
 }

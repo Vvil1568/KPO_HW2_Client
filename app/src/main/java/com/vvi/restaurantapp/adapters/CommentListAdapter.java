@@ -15,7 +15,7 @@ import com.vvi.restaurantapp.R;
 import com.vvi.restaurantapp.items.Comment;
 
 public class CommentListAdapter extends ArrayAdapter<Comment> {
-    private int itemResourceType;
+    private final int itemResourceType;
 
     public CommentListAdapter(@NonNull Context context, int resource) {
         super(context, resource);

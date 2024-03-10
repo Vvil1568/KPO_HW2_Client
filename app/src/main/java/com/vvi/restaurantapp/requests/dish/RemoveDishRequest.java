@@ -18,7 +18,7 @@ public class RemoveDishRequest extends BasicRequest {
     private final int adapterId;
 
     public RemoveDishRequest(Context context, DishArrayAdapter activity, int adapterId) {
-        super("/dish/remove","POST");
+        super("/dish/remove", "POST");
         this.responseAdapter = new WeakReference<>(activity);
         this.responseContext = new WeakReference<>(context);
         this.adapterId = adapterId;
@@ -27,10 +27,10 @@ public class RemoveDishRequest extends BasicRequest {
     @Override
     protected void onPostExecute(String s) {
         JSONObject response = readAsJson(s);
-        if(response!=null){
+        if (response != null) {
             responseAdapter.get().removeId(adapterId);
-        }else{
-            Toast.makeText(responseContext.get(), "Произошла ошибка при удалении блюда!\n"+s, Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(responseContext.get(), "Произошла ошибка при удалении блюда!\n" + s, Toast.LENGTH_SHORT).show();
         }
     }
 

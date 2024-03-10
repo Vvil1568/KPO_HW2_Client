@@ -13,16 +13,15 @@ import com.vvi.restaurantapp.requests.order.GetOrderDishListRequest;
 import com.vvi.restaurantapp.requests.order.PublishOrderRequest;
 
 public class ShoppingCartActivity extends AppCompatActivity {
-    private ListView listView;
     private ShoppingCartAdapter listAdapter;
-    private Button postOrder;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shopping_cart);
 
-        listView = findViewById(R.id.cartList);
-        postOrder = findViewById(R.id.cartPlaceOrder);
+        ListView listView = findViewById(R.id.cartList);
+        Button postOrder = findViewById(R.id.cartPlaceOrder);
 
         listAdapter = new ShoppingCartAdapter(this, R.layout.cart_list_item);
         listView.setAdapter(listAdapter);

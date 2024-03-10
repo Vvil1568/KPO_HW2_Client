@@ -8,7 +8,7 @@ public class Dish {
     private long time;
     private String image;
 
-    public Dish(int id, String name, String description, double price, long time, String image){
+    public Dish(int id, String name, String description, double price, long time, String image) {
         this.id = id;
         this.name = name;
         this.description = description;
@@ -45,7 +45,7 @@ public class Dish {
         return image;
     }
 
-    public void copy(Dish dish){
+    public void copy(Dish dish) {
         this.id = dish.id;
         this.name = dish.name;
         this.description = dish.description;

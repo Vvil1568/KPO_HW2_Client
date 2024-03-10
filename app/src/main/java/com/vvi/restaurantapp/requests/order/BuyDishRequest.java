@@ -15,16 +15,16 @@ public class BuyDishRequest extends BasicRequest {
     private final WeakReference<Context> responseContext;
 
     public BuyDishRequest(Context context) {
-        super("/order/adddish","POST");
+        super("/order/adddish", "POST");
         this.responseContext = new WeakReference<>(context);
     }
 
     @Override
     protected void onPostExecute(String s) {
         JSONObject response = readAsJson(s);
-        if(response==null){
-            Toast.makeText(responseContext.get(), "Произошла ошибка при добавлении блюда в корзину!\n"+s, Toast.LENGTH_SHORT).show();
-        }else{
+        if (response == null) {
+            Toast.makeText(responseContext.get(), "Произошла ошибка при добавлении блюда в корзину!\n" + s, Toast.LENGTH_SHORT).show();
+        } else {
             Toast.makeText(responseContext.get(), "Блюдо добавлено в корзину!", Toast.LENGTH_SHORT).show();
         }
     }

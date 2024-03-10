@@ -16,23 +16,23 @@ public class GetFavouriteDishRequest extends BasicRequest {
     private final WeakReference<AdminStatisticsActivity> responseActivity;
 
     public GetFavouriteDishRequest(AdminStatisticsActivity context) {
-        super("/stats/favouritedish","POST");
+        super("/stats/favouritedish", "POST");
         this.responseActivity = new WeakReference<>(context);
     }
 
     @Override
     protected void onPostExecute(String s) {
         JSONObject response = readAsJson(s);
-        if(response!=null){
+        if (response != null) {
             try {
                 String favouriteDish = response.getString("favourite_dish");
-                Toast toast = Toast.makeText(responseActivity.get(), "Самое популярное блюдо: "+favouriteDish, Toast.LENGTH_SHORT);
-                toast.setMargin(0,1);
+                Toast toast = Toast.makeText(responseActivity.get(), "Самое популярное блюдо: " + favouriteDish, Toast.LENGTH_SHORT);
+                toast.setMargin(0, 1);
                 toast.show();
             } catch (JSONException e) {
                 Toast.makeText(responseActivity.get(), "Невозможно определить самое популярное блюдо!", Toast.LENGTH_SHORT).show();
             }
-        }else{
+        } else {
             Toast.makeText(responseActivity.get(), "Невозможно определить самое популярное блюдо!", Toast.LENGTH_SHORT).show();
         }
     }

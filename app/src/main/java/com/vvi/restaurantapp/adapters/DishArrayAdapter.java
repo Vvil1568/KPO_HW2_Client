@@ -23,7 +23,7 @@ import com.vvi.restaurantapp.requests.order.BuyDishRequest;
 import com.vvi.restaurantapp.util.SessionStorage;
 
 public class DishArrayAdapter extends ArrayAdapter<Dish> {
-    private int itemResourceType;
+    private final int itemResourceType;
 
     public DishArrayAdapter(@NonNull Context context, int resource) {
         super(context, resource);

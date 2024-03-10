@@ -34,7 +34,7 @@ public class UserMainActivity extends AppCompatActivity {
             new CancelOrderRequest(this).execute();
         });
 
-        findViewById(R.id.leaveComment).setOnClickListener(v->{
+        findViewById(R.id.leaveComment).setOnClickListener(v -> {
             Intent intent = new Intent(UserMainActivity.this, CommentDishListActivity.class);
             startActivity(intent);
         });

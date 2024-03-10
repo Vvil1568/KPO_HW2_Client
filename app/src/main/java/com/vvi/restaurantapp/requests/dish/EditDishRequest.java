@@ -3,7 +3,6 @@ package com.vvi.restaurantapp.requests.dish;
 import android.content.Context;
 import android.widget.Toast;
 
-import com.vvi.restaurantapp.activities.MenuActivity;
 import com.vvi.restaurantapp.adapters.DishArrayAdapter;
 import com.vvi.restaurantapp.items.Dish;
 import com.vvi.restaurantapp.requests.BasicRequest;

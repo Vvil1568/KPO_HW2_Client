@@ -5,19 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.RatingBar;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.vvi.restaurantapp.R;
-import com.vvi.restaurantapp.items.Comment;
 
 import java.util.AbstractMap;
 
 public class RatingListAdapter extends ArrayAdapter<AbstractMap.SimpleEntry<String, Double>> {
-    private int itemResourceType;
+    private final int itemResourceType;
 
     public RatingListAdapter(@NonNull Context context, int resource) {
         super(context, resource);

@@ -15,18 +15,18 @@ public class PublishOrderRequest extends BasicRequest {
     private final WeakReference<Context> responseContext;
 
     public PublishOrderRequest(Context context) {
-        super("/order/postorder","POST");
+        super("/order/postorder", "POST");
         this.responseContext = new WeakReference<>(context);
     }
 
     @Override
     protected void onPostExecute(String s) {
         JSONObject response = readAsJson(s);
-        if(response==null){
-            Toast.makeText(responseContext.get(), "Произошла ошибка при оформлении заказа!\n"+s, Toast.LENGTH_SHORT).show();
-        }else{
+        if (response == null) {
+            Toast.makeText(responseContext.get(), "Произошла ошибка при оформлении заказа!\n" + s, Toast.LENGTH_SHORT).show();
+        } else {
             Toast toast = Toast.makeText(responseContext.get(), "Заказ успешно оформлен!", Toast.LENGTH_SHORT);
-            toast.setMargin(0,1);
+            toast.setMargin(0, 1);
             toast.show();
         }
     }

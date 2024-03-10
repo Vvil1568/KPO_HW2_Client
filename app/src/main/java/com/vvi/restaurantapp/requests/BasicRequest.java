@@ -3,6 +3,7 @@ package com.vvi.restaurantapp.requests;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import com.vvi.restaurantapp.util.IPSettings;
 import com.vvi.restaurantapp.util.SessionStorage;
 
 import org.json.JSONException;
@@ -13,6 +14,7 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
+import java.net.InetAddress;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
@@ -92,6 +94,6 @@ public abstract class BasicRequest extends AsyncTask<String, Void, String> {
     }
 
     private String getURL(){
-        return "http://192.168.1.66:8080"+endpoint;
+        return "http://" + IPSettings.SERVER_IP + ":" + IPSettings.SERVER_PORT + endpoint;
     }
 }
